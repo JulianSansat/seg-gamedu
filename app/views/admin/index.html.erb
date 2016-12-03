@@ -1,0 +1,73 @@
+
+  <section class="no_padding main">
+    <div class="container">
+      <h1 class="post_title entry-title">Area de Administrador</h1>
+      <div class="post_text_area">
+        <div class="columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small">
+          <div class="columns1_4 sc_column_item sc_column_item_1 odd first"></div>
+          <div class="columns2_4 sc_column_item sc_column_item_2 even span_2">
+            <div class="sc_button sc_button_style_dark  sc_button_size_mini squareButton fullSize dark  mini  ico margin_bottom_mini">
+              <%= link_to 'Aulas', lessons_url , class: ''%>
+            </div>
+            <div class="sc_button sc_button_style_dark  sc_button_size_mini squareButton fullSize dark  mini  ico margin_bottom_mini">
+              <%= link_to 'Questões', questions_url, class: ''%>
+            </div>
+          </div>
+          <div class="columns1_4 sc_column_item sc_column_item_4 even after_span_2"></div>
+        </div>
+
+        <div class="columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small">
+          <h3>Usuarios</h3>
+          <div class="columns4_4">
+            <div class="sc_table sc_table_style_2 sc_table_size_big">
+              <table>
+                <tbody>
+                <tr>
+                  <th>Nome</th>
+                  <th>Email</th>
+                  <th>Acertos</th>
+                  <th>Erros</th>
+                  <th>lvl</th>
+                </tr>
+                <% @users.each do |user| %>
+                  <% @chars.each do |character| %>
+                    <tr>
+                      <% if user.id == character.user_id %>
+                          <td><%= user.name %></td>
+                          <td><%= user.email %></td>
+                          <td><%= character.correct%></td>
+                          <td><%= character.wrong%></td>
+                          <td><%= character.level%></td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div> <!-- /tabela-->
+
+        <br>
+        <div class="columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small">
+          <div class="sc_line sc_line_style_dashed"></div>
+          <h3>Tokens de acesso API</h3>
+          <div class="columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small">
+            <div class="columns4_4">
+              Endereço da API: <strong>api/v1/questions?access_token=</strong>
+              <div class="sc_button sc_button_style_dark  sc_button_size_mini squareButton fullSize dark  mini  ico margin_bottom_mini" ><%= link_to "create new access_token", admin_new_token_path, class: '' %></div>
+
+              <% if @tokens != nil %>
+                  <% @tokens.each do |token| %>
+                      <%= text_area_tag 'token', token.access_token, readonly: true%>
+                      <%= link_to "Deletar", {:controller => "admin", :action => "delete_token", :token => token }, data: {confirm: "Certeza que deseja deletar? todos os aplicativos que utlizam este token ficarão impossibilitados de acessar a API"},  class: 'btn btn-danger'%>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+
+        </div><!-- /api-->
+
+      </div> <!-- /post_text_area-->
+    </div> <!-- /container -->
+  </section>

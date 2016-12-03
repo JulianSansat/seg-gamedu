@@ -1,0 +1,40 @@
+<div class="mainWrap without_sidebar">
+  <div class="main">
+    <div class="content">
+
+      <section class="no_margin no_padding">
+        <div class="container">
+
+          <div class="masonryWrap">
+            <p id="notice"><%= notice %></p>
+            <section class="masonry isotope" data-columns="3">
+              <% @items.each do |item| %>
+              <article class="isotopeElement post_format_standard even ">
+                <div class="isotopePadding">
+                  <div class="thumb hoverIncrease alignCenter" data-title="Summer Childcare Questions" style="min-height: 230px ;">
+                    <%= image_tag(item.display_img) %>
+                  </div>
+                  <h4 style="text-align: center">
+                    <a href="#" ><%= item.name %></a>
+                  </h4>
+                  <p>Armadura é uma vestimenta utilizada para proteção pessoal, originalmente de metal, usada por soldados, guerreiros e cavaleiros como uma forma de proteção às armas brancas durante uma batalha.</p>
+
+                    <h5 ><i class="fa fa-money" aria-hidden="true"></i> Preço <%= item.price %></h5>
+
+                  <div class="sc_button sc_button_style_global sc_button_size_mini squareButton fullSize global mini  ico margin_bottom_mini">
+                    <%= button_to 'Comprar', line_items_path(item_id: item), class: "icon-code" %>
+                  </div>
+                  <br>
+                  <span class="inlineShadow"></span>
+                </div>
+              </article>
+              <% end %>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>

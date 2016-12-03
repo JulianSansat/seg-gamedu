@@ -1,0 +1,55 @@
+<%@lessons_for_print = Lesson.all%>
+
+<section class="no_padding main">
+  <div class="container">
+    <h1 class="post_title entry-title">Missoes</h1>
+    <div class="sc_line sc_line_style_dashed"></div>
+    <div class="post_text_area">
+      <h3></h3>
+      <div class="sc_blogger sc_blogger_horizontal style_date sc_blogger_columns_4">
+        <% @lessons_for_print.each do |lesson| %>
+            <!-- <%= link_to lesson.subject, quiz_index_path(:subject => lesson.subject, :url => lesson.url ) %> -->
+            <article class="sc_blogger_item">
+
+            <div class="sc_blogger_date">
+              <span class="day_month"><i class="fa fa-question-circle fa-3x" aria-hidden="true"></i></span>
+
+            </div>
+
+            <h4 class="sc_blogger_title sc_title">
+              <a href="">
+                <%= lesson.subject %>
+              </a>
+              <div class="sc_button sc_button_style_global sc_button_size_mini squareButton fullSize global mini  ico margin_bottom_mini">
+                <a href="<%= quiz_index_path(:subject => lesson.subject, :url => lesson.url ) %>" class="">Ir <i class="fa fa-arrow-right"></i></a>
+              </div>
+            </h4>
+
+            <div class="sc_blogger_info">
+              <a href="<%= quiz_index_path(:subject => lesson.subject, :url => lesson.url ) %>">
+                <% if(@done_lessons!=nil) %>
+                    <% @done_lessons.each do |done_lesson| %>
+                        <%if done_lesson.lesson_id == lesson.id%>
+                            <% (1..done_lesson.score).each do %>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            <% end %>
+                        <%end%>
+                    <% end %>
+                <% end %>
+              </a>
+              <span class="separator">|</span>
+              Views
+              <span class="comments_number">339</span>
+            </div>
+
+          </article>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+

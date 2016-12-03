@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag 'application', 'vendor/new-royalslider/lib/royalslider/royalslider', '__packed', 'fontello/css/fontello', 'fontello/css/animation', 'style', 'shortcodes', 'kidscare', 'responsive', 'novo_reino', media: 'all', 'data-turbolinks-track' => true %>
+
+  <style id='theme-skin-inline-css' type='text/css'></style>
+
+  <%= stylesheet_link_tag 'responsive'%>
+
+  <%= csrf_meta_tags %>
+  <script type="text/javascript" src="/assets/html5-canvas-game-character-1.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<!--<body class="home page themerex_body fullscreen top_panel_above theme_skin_kidscare">-->
+<body class="page themerex_body fullscreen top_panel_below video_bg theme_skin_kidscare">
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&& >>> novo tema &&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+<div class="main_content">
+  <div class="boxedWrap">
+<!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&& <<< novo tema &&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+<%= render :partial => 'layouts/navbar' %>
+<% if user_signed_in?%>
+<div class="sc_line sc_line_style_solid margin_top_small margin_bottom_small"></div>
+<% end %>
+<%= yield %>
+
+    <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ >>> footer $$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+    <div class="footerContentWrap">
+      <footer class="footerWrap footerStyleLight contactFooterWrap">
+        <div class="main contactFooter">
+          <section>
+            <div class="contactAddress">
+              <address class="addressRight">
+                Phone: 1.800.123.4567<br>
+                Fax: 1.800.123.4566 </address>
+              <address class="addressLeft">
+                Natal, RN , BR<br>
+                Capim Macio, 1851, Rua Missionário Joel Carlson </address>
+            </div>
+            <div class="contactTtextLine">Compartilhe com os amigos que desejam aprender e se divertir</div>
+            <div class="contactShare">
+              <ul>
+                <li>
+                  <a class="social_icons fShare facebook_image" href="http://facebook.com/" target="_blank" title="Facebook">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social_icons fShare pinterest_image" href="http://pinterest.com/" target="_blank" title="Pinterest">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social_icons fShare twitter_image" href="http://twitter.com/" target="_blank" title="Twitter">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social_icons fShare gplus_image" href="http://gplus.com/" target="_blank" title="Gplus">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social_icons fShare linkedin_image" href="http://linkedin.com/" target="_blank" title="Linkedin">
+                    <span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="social_icons fShare vimeo_image" href="http://vimeo.com/" target="_blank" title="Vimeo">
+                    <span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </footer>
+      <div class="upToScrollWrapper">
+        <div class="upToScroll">
+          <a href="#" class="scrollToTop" title="Back to top">
+          </a>
+        </div>
+      </div>
+      <div class="copyWrap">
+        <div class="copy main">
+          <div class="copyright">
+            <a href="#">RexWeb</a> &copy; 2016 All Rights Reserved
+            <a href="#">Terms of Use</a>
+            and <a href="#">Privacy Policy</a>
+          </div>
+          <div class="copy_socials socPage">
+            <ul>
+              <li>
+                <a class="social_icons social_facebook facebook_image" target="_blank" href="http://facebook.com/">
+                  <span></span>
+                </a>
+              </li>
+              <li>
+                <a class="social_icons social_pinterest pinterest_image" target="_blank" href="http://pinterest.com/">
+                  <span></span>
+                </a>
+              </li>
+              <li>
+                <a class="social_icons social_twitter twitter_image" target="_blank" href="http://twitter.com/">
+                  <span></span>
+                </a>
+              </li>
+              <li>
+                <a class="social_icons social_gplus gplus_image" target="_blank" href="http://gplus.com/">
+                  <span></span>
+                </a>
+              </li>
+              <li>
+                <a class="social_icons social_linkedin linkedin_image" target="_blank" href="http://linkedin.com/">
+                  <span></span>
+                </a>
+              </li>
+              <li>
+                <a class="social_icons social_vimeo vimeo_image" target="_blank" href="http://vimeo.com/">
+                  <span></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ <<< footer $$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+
+  </div> <!-- /.boxedWrap -->
+</div> <!-- /.main_content -->
+<div class="upToScroll">
+  <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"> </a>
+  <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"> </a>
+</div>
+
+  <%= javascript_include_tag 'vendor/jquery-1.11.3.min', 'vendor/jquery-migrate.min', 'vendor/new-royalslider/lib/royalslider/jquery.royalslider.min',  'vendor/__packed', 'custom/shortcodes_init', 'custom/_utils', 'custom/_front', 'custom/__main', 'vendor/diagram/diagram.raphael.min' %>
+
+</body>
+</html>

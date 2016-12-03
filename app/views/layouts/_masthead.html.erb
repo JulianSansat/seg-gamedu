@@ -1,0 +1,119 @@
+<% if user_signed_in?%>
+
+<div class="mainWrap" id="masthead">
+  <div class="main">
+
+      <div class="content">
+        <section class="post post_format_standard postAlter page type-page">
+          <article class="post_content">
+            <div class="post_text_area">
+              <% if @character && @character.xp != nil %>
+              <section class="no_padding">
+                <div class="container">
+
+                  <div class="sc_section sc_alignright columns2_3 margin_bottom_small">
+                    <div class="sc_skills sc_skills_arc" data-type="arc" data-subtitle="Skills">
+                      <div class="sc_skills_legend">
+                        <ul>
+                          <li>Experience</li>
+                          <li>Level</li>
+                          <li>Life</li>
+                          <li>Gold</li>
+                          <li>Score</li>
+                        </ul>
+                        <div class="sc_line sc_line_style_shadow"></div>
+                        <h1 class="post_title entry-title"><%= current_user.name%></h1>
+                        <h4><small>Personagem:</small> <%= @character.name %></h4>
+                      </div>
+                      <div id="sc_skills_diagram" class="sc_skills_arc_canvas">
+                      </div>
+                      <div class="sc_skills_data">
+                        <div class="arc">
+                          <input type="hidden" class="text" value="Experience"/>
+                          <input type="hidden" class="percent" value="<%= ((100*@character.xp)/200) %>"/>
+                          <input type="hidden" class="color" value="rgb(27,180,185,1)"/>
+                        </div>
+                        <div class="arc">
+                          <input type="hidden" class="text" value="Level"/>
+                          <input type="hidden" class="percent" value="<%= @character.level %>"/>
+                          <input type="hidden" class="color" value="rgba(27,180,185,0.9)"/>
+                        </div>
+                        <div class="arc">
+                          <input type="hidden" class="text" value="Life"/>
+                          <input type="hidden" class="percent" value="59"/>
+                          <input type="hidden" class="color" value="rgba(27,180,185,0.8)"/>
+                        </div>
+                        <div class="arc">
+                          <input type="hidden" class="text" value="Gold"/>
+                          <input type="hidden" class="percent" value="<%= @character.gold * 0.20 %>"/>
+                          <input type="hidden" class="color" value="rgba(27,180,185,0.7)"/>
+                        </div>
+                        <div class="arc">
+                          <input type="hidden" class="text" value="Score"/>
+                          <input type="hidden" class="percent" value="45"/>
+                          <input type="hidden" class="color" value="rgba(27,180,185,0.6)"/>
+                        </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                  <div class="post_text_area">
+                    <div class="sc_skills sc_skills_counter" data-type="counter" data-subtitle="Skills">
+                      <div class="columnsWrap sc_skills_columns">
+                        <div class="sc_skills_column columns2_4">
+                          <div class="sc_skills_item sc_skills_style_1 odd first">
+                            <div class="sc_skills_count">
+                              <div class="sc_skills_total" data-start="0" data-stop="<%= @character.gold %>" data-step="5" data-max="1000" data-speed="14" data-duration="1399" data-ed="">0</div>
+                            </div>
+                            <div class="sc_skills_info">Gold</div>
+                          </div>
+                        </div>
+                        <div class="sc_skills_column columns2_4">
+                          <div class="sc_skills_item sc_skills_style_2 even">
+                            <div class="sc_skills_count">
+                              <div class="sc_skills_total" data-start="0" data-stop="5" data-step="1" data-max="1000" data-speed="30" data-duration="1647" data-ed="">0</div>
+                            </div>
+                            <div class="sc_skills_info">Life <i class="fa fa-heart" aria-hidden="true"></i></div>
+                          </div>
+                        </div>
+                        <div class="sc_skills_column columns2_4">
+                          <div class="sc_skills_item sc_skills_style_3 odd">
+                            <div class="sc_skills_count">
+                              <div class="sc_skills_total" data-start="0" data-stop="<%= @character.level %>" data-step="5" data-max="1000" data-speed="18" data-duration="313" data-ed="">0</div>
+                            </div>
+                            <div class="sc_skills_info">Level</div>
+                          </div>
+                        </div>
+                        <div class="sc_skills_column columns2_4">
+                          <div class="sc_skills_item sc_skills_style_4 even">
+                            <div class="sc_skills_count">
+                              <div class="sc_skills_total" data-start="0" data-stop="<%= ((100*@character.xp)/200) %>" data-step="1" data-max="1000" data-speed="1" data-duration="200" data-ed="">0</div>
+                            </div>
+                            <div class="sc_skills_info">XP</div>
+                          </div>
+                        </div>
+
+
+
+                      </div>
+                    </div>
+                    <div class="sc_line sc_line_style_solid margin_top_small margin_bottom_small"></div>
+                  </div>
+
+                </div>
+              </section>
+              <% else %>
+                  <div class="columns4_4" >
+                  </div>
+              <% end %>
+            </div> <!-- /Post_test_area-->
+          </article>
+        </section>
+      </div>
+
+    </div>
+</div>
+
+<% end %>

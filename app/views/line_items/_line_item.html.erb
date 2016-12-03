@@ -1,0 +1,11 @@
+ <tr>
+        <td><%= line_item.item.name %></td>
+        <td><%= image_tag(line_item.item.img, class: 'list_image') %></td>
+        <td><%= line_item.item.price %></td>
+        <% if (line_item.item.img == @character.helmet || line_item.item.img == @character.armor || line_item.item.img == @character.weapon || line_item.item.img == @character.shield) %>
+          <td><%= button_to 'Desequipar', {:controller => "characters", :action => "removeItem", :part => line_item.item.part} , :method=>:post, class: "btn btn-warning" %></td>
+        <% else %>
+          <td><%= button_to 'Equipar', {:controller => "characters", :action => "addItem", :name => line_item.item.name,:item_img => line_item.item.img, :part => line_item.item.part} , :method=>:post,  class: "btn btn-primary pull-left", :remote => :true %></td>
+          <td><%= button_to 'Vender', line_item, method: :delete, class: "btn btn-success pull-right", data: { confirm: 'Tem certeza que deseja vender?' } %></td>
+        <% end %>
+</tr>

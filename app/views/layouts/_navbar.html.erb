@@ -1,0 +1,92 @@
+<!-- *************************************************************************************************************** -->
+<header class="noFixMenu menu_right without_user_menu">
+  <div class="topWrapFixed"></div>
+  <div class="topWrap">
+    <div class="mainmenu_area">
+      <div class="main with_logo_left">
+        <div class="logo logo_left">
+          <a href="#">
+            <h2>Reino do Código</h2>
+            <span class="logo_slogan"></span>
+          </a>
+        </div>
+        <div class="search" title="Open/close search form">
+          <div class="searchForm">
+            <form method="get" class="search-form" action="#">
+              <button type="submit" class="searchSubmit" title="Start search">
+                <span class="icoSearch"></span>
+              </button>
+              <input type="text" class="searchField" placeholder="Search &hellip;" value="" name="s" title="Search for:"/>
+            </form>
+          </div>
+          <div class="ajaxSearchResults"></div>
+        </div>
+        <a href="#" class="openResponsiveMenu">Menu</a>
+        <nav role="navigation" class="menuTopWrap topMenuStyleLine">
+          <ul id="mainmenu" class="">
+            <li class="menu-item current-menu-ancestor menu-item-has-children">
+              <a href="../main/index">Inicio</a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+              <a href="../characters">Personagem</a>
+            </li>
+            <li class="menu-item menu-item-has-children columns custom_view_item">
+              <a title="Tools and Pages" href="../quiz/catalog">
+                <span class="menu_icon icon-params"> </span>
+                Missoes
+              </a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+              <a title="Layouts and hovers" href="../store/index">
+                <span class="menu_icon icon-thumbs-up"></span>
+                Loja
+              </a>
+            </li>
+            <% if user_signed_in? %>
+                <li class="menu-item menu-item-has-children">
+                  <!--<span class="menu_icon icon-note"></span>-->
+                  <%= link_to "Sair", destroy_user_session_path, :method => 'delete' %>
+                </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- *************************************************************************************************************** -->
+
+<!--<header class="navbar navbar-bright navbar-fixed-top" role="banner">-->
+  <!--<div class="container">-->
+    <!--<div class="navbar-header">-->
+      <!--<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+      <!--</button>-->
+      <!--<a href="../main/index" class="navbar-brand">Reino do Código</a>-->
+    <!--</div>-->
+    <!--<nav class="navbar-collapse navbar-right" role="navigation">-->
+      <!--<ul class="nav navbar-nav nav-pills">-->
+        <!--<li role="presentation">-->
+          <!--<a href="../main/index">Inicio</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+          <!--<a href="../characters">Personagem</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+          <!--<a href="../quiz/catalog">Missoes</a>-->
+        <!--</li>-->
+        <!--<li role="presentation">-->
+          <!--<a href="../store/index">Loja</a>-->
+        <!--</li>-->
+        <!--<% if user_signed_in? %>-->
+        <!--<li>-->
+          <!--<%= link_to "Sair", destroy_user_session_path, :method => 'delete' %>-->
+        <!--</li>-->
+        <!--<% end %>-->
+      <!--</ul>-->
+    <!--</nav>-->
+  <!--</div>-->
+<!--</header>-->

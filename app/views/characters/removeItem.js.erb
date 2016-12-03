@@ -1,0 +1,11 @@
+$('#list').html('<%= escape_javascript render (@line_items) %>');
+$('#canvasDiv').empty();
+prepareCanvas(document.getElementById("canvasDiv"), 490, 220, "<%= @character.helmet%>", "<%= @character.armor%>", "<%= @character.shield%>", "<%= @character.weapon%>");
+                change('hair', "<%= @character.hair %>");
+                change('torso', "<%= @character.shirt %>");
+                change('legs', "<%= @character.pants %>");
+                if("<%= @character.skin %>" != "default"){
+                  change('head', "head_" + "<%= @character.skin %>");
+                  change('leftArm', "leftArm_" + "<%= @character.skin %>");
+                  change('rightArm', "rightArm_" + "<%= @character.skin %>");
+                }

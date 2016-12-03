@@ -1,0 +1,133 @@
+
+<section class="no_padding main">
+  <div class="content">
+    <section class="post post_format_standard postAlter page type-page">
+      <article class="post_content">
+        <div class="post_text_area">
+
+          <section class="no_padding">
+            <div class="container">
+
+
+              <%= form_for(@character) do |f| %>
+              <div class="post_text_area">
+
+
+                <div class="columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small">
+                  <div class="columns1_4 sc_column_item sc_column_item_1 odd first align_center ">
+                    <div class="columnsWrap">
+                      <div class="columns3_3">
+                       <h3>Novo personagem</h3>
+                        <%= f.label :Nome %> <%= f.text_field :name, :class => ''%>
+                      </div>
+                    </div>
+
+
+                      <style>
+                        #canvas {
+                          margin-left: -160px;
+                          margin-top: 10px;
+                        }
+                      </style>
+                    <div id="canvasDiv"></div>
+                    <script type="text/javascript">
+                      prepareCanvas(document.getElementById("canvasDiv"), 390, 220, "none", "none", "none", "none");
+                    </script>
+
+                    <br>
+                    <br>
+                    <br>
+                    <div class="sc_line sc_line_style_dashed"></div>
+                    <div class="sc_button sc_button_style_global sc_button_size_huge squareButton fullSize global huge  ico margin_bottom_mini">
+                      <%= f.submit "Criar Personagem", :class=>""%>
+                    </div>
+
+                    <div class="sc_line sc_line_style_dashed"></div>
+                  </div> <!-- /columns1_4 sc_column_item sc_column_item_1 odd first -->
+                  <div class="columns3_4 sc_column_item sc_column_item_2 even span_3">
+                    <h2 class="sc_title sc_title_regular aligncenter margin_bottom_small">Características</h2>
+                    <div class="sc_pricing_table columns_4 alignCenter">
+                      <div class="sc_pricing_columns sc_pricing_column_1">
+                        <ul class="columnsAnimate">
+                          <li class="sc_pricing_data sc_pricing_title"><%= image_tag  "sm_hair.png", :class =>"media-left"%></li>
+                          <li class="sc_pricing_data sc_pricing_price">
+                            <div class="sc_price_item">
+                              <div class="sc_price_money">Cabelo</div>
+
+                            </div>
+                          </li>
+                          <li class="sc_pricing_data"><%= f.radio_button :hair, 'hair', onClick: "change('hair', 'hair');", :checked => true %><%= label :hair_default, 'Default'%></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :hair, 'hair_green', onClick: "change('hair','hair_green');" %><%= label :hair_green, 'Green' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :hair, 'hair_pink', onClick: "change('hair','hair_pink');"%><%= label :hair_blue, 'Pink' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :hair, 'hair_red', onClick: "change('hair','hair_red');" %><%= label :hair_brown, 'Red' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :hair, 'hair_yellow', onClick: "change('hair','hair_yellow');" %><%= label :hair_yellow, 'yellow' %></li>
+                        </ul>
+                      </div>
+                      <div class="sc_pricing_columns sc_pricing_column_2">
+                        <ul class="columnsAnimate">
+                          <li class="sc_pricing_data sc_pricing_title"><%= image_tag  "sm_torso.png", :class =>"media-left"%></li>
+                          <li class="sc_pricing_data sc_pricing_price">
+                            <div class="sc_price_item">
+                              <div class="sc_price_money">Tronco</div>
+                            </div>
+                          </li>
+                          <li class="sc_pricing_data"><%= f.radio_button :shirt, 'torso', onClick: "change('torso', 'torso');", :checked => true %><%= label :torso, 'Default'%></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :shirt, 'torso_blue', onClick: "change('torso','torso_blue');" %><%= label :shirt_blue, 'Blue' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :shirt, 'torso_gray', onClick: "change('torso','torso_gray');"%><%= label :shirt_gray, 'Gray' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :shirt, 'torso_purple', onClick: "change('torso','torso_purple');" %><%= label :shirt_purple, 'Purple' %></li>
+                        </ul>
+                      </div>
+                      <div class="sc_pricing_columns sc_pricing_column_3">
+                        <ul class="columnsAnimate">
+                          <li class="sc_pricing_data sc_pricing_title"><%= image_tag  "sm_head.png", :class =>"media-left"%></li>
+                          <li class="sc_pricing_data sc_pricing_price">
+                            <div class="sc_price_item">
+                              <div class="sc_price_money">Cabeça</div>
+                            </div>
+                          </li>
+                          <li class="sc_pricing_data"><%= f.radio_button :skin, 'default', onClick: "change('head', 'head');change('leftArm', 'leftArm');change('rightArm', 'rightArm');", :checked => true %><%= label :skin, 'Default'%></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :skin, 'green', onClick: "change('head', 'head_green');change('leftArm', 'leftArm_green');change('rightArm', 'rightArm_green');" %><%= label :skin, 'Green' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :skin, 'pink', onClick: "change('head', 'head_pink');change('leftArm', 'leftArm_pink');change('rightArm', 'rightArm_pink');"%><%= label :skin, 'Pink' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :skin, 'yellow', onClick: "change('head', 'head_yellow');change('leftArm', 'leftArm_yellow');change('rightArm', 'rightArm_yellow');" %><%= label :skin, 'Yellow' %></li>
+                        </ul>
+                      </div>
+                      <div class="sc_pricing_columns sc_pricing_column_4">
+                        <ul class="columnsAnimate">
+                          <li class="sc_pricing_data sc_pricing_title"><%= image_tag  "sm_legs.png", :class =>"media-left"%></li>
+                          <li class="sc_pricing_data sc_pricing_price">
+                            <div class="sc_price_item">
+                              <div class="sc_price_money">Calça</div>
+                            </div>
+                          </li>
+                          <li class="sc_pricing_data"><%= f.radio_button :pants, 'legs', onClick: "change('legs', 'legs');", :checked => true %><%= label :pants, 'Default'%></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :pants, 'legs_gray', onClick: "change('legs', 'legs_gray');" %><%= label :pants, 'Gray' %></li>
+                          <li class="sc_pricing_data"><%= f.radio_button :pants, 'legs_green', onClick: "change('legs', 'legs_green');"%><%= label :skin, 'Green' %></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <br>
+                  </div> <!-- /columns3_4 sc_column_item sc_column_item_2 even span_3 -->
+                </div> <!-- /columnsWrap sc_columns no_margin sc_columns_count_4 margin_top_small -->
+                <div class="sc_line sc_line_style_solid margin_top_big margin_bottom_big"></div>
+
+
+
+              </div> <!-- /.post_text_area -->
+              <% end %>
+            </div>
+          </section>
+
+        </div>
+      </article>
+    </section>
+  </div>
+</section>
+
+
+
+
+
+
+    <div class="col-md-7">
+
+    </div>
