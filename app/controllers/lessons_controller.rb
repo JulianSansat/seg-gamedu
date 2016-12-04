@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
 
 
   end
-  
+
   def index
     @lessons = Lesson.all
   end
@@ -80,6 +80,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:url, :subject)
+      params.require(:lesson).permit(:url, :subject, :slide)
     end
 end

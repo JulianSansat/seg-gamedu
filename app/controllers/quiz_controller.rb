@@ -3,9 +3,10 @@ skip_before_action :verify_authenticity_token
 
 
   def index
+
     @characters = Character.where(user_id: current_user)
     if(@characters.size >= 1)
-        @lesson = Lesson.new(lesson_params)
+        @lesson = Lesson.where(subject: params[:subject]).first
         @video = @lesson.url
         @questions = Question.where(lesson: @lesson.subject).order("RANDOM()").limit(5)
         @i = 0
