@@ -6,7 +6,7 @@
       <div class="main with_logo_left">
         <div class="logo logo_left">
           <a href="#">
-            <h2>Reino do Código</h2>
+            <h2>Gamedu IFRN - EAD</h2>
             <span class="logo_slogan"></span>
           </a>
         </div>
@@ -25,22 +25,16 @@
         <nav role="navigation" class="menuTopWrap topMenuStyleLine">
           <ul id="mainmenu" class="">
             <li class="menu-item current-menu-ancestor menu-item-has-children">
-              <a href="../main/index">Inicio</a>
+              <%= link_to "inicio", admin_index_path %>
             </li>
             <li class="menu-item menu-item-has-children">
-              <a href="../characters">Personagem</a>
+              <%= link_to "personagem", characters_path %>
             </li>
             <li class="menu-item menu-item-has-children columns custom_view_item">
-              <a title="Tools and Pages" href="../quiz/catalog">
-                <span class="menu_icon icon-params"> </span>
-                Missoes
-              </a>
+              <%= link_to "missões", quiz_catalog_path %>
             </li>
             <li class="menu-item menu-item-has-children">
-              <a title="Layouts and hovers" href="../store/index">
-                <span class="menu_icon icon-thumbs-up"></span>
-                Loja
-              </a>
+              <%= link_to "loja", store_index_path %>
             </li>
             <% if user_signed_in? %>
                 <li class="menu-item menu-item-has-children">

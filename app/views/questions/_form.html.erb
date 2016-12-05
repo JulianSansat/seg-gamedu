@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :lesson %><br>
-    <%= f.text_field :lesson %>
+    <%= f.label :aula_referencia %><br>
+    <%= f.select "lesson", options_from_collection_for_select(@lessons, "subject", "subject") %>
   </div>
   <div class="field">
-    <%= f.label :statement %><br>
+    <%= f.label :enunciado %><br>
     <%= f.text_area :statement %>
   </div>
   <div class="field">
-    <%= f.label :a %><br>
+    <%= f.label :a %><strong>(Questão certa)</strong><br>
     <%= f.text_field :a %>
   </div>
   <div class="field">

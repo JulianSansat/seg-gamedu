@@ -36,7 +36,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-
+    @lesson.url = @lesson.youtubeRegExp(@lesson.url)
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }

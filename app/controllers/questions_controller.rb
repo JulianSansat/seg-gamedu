@@ -28,6 +28,7 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @lessons = Lesson.all
   end
 
   # GET /questions/1/edit
