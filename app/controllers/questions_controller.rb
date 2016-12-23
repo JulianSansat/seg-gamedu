@@ -33,6 +33,7 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+    @lessons = Lesson.all
   end
 
   # POST /questions
